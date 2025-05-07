@@ -1,0 +1,25 @@
+{
+    "name": "a a",
+    "email": "a@wp.pl",
+    "location": "asd",
+    "phone": "235",
+    "current_role": "programista",
+    "experience_years": 4,
+    "industry": "komunikacja",
+    "education": "In\u017cynier",
+    "salary_expectation": 0,
+    "skills": [
+        "java",
+        "python",
+        "Negotiation",
+        "Mentoring",
+        "Communication",
+        "c++",
+        "Python",
+        "Java",
+        "JavaScript",
+        "Project Management",
+        "Time Management",
+        "Teamwork"
+    ]
+}

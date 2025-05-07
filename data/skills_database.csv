@@ -1,0 +1,21 @@
+skill_id,skill_name,category,relevance_score,learning_difficulty
+1,Python,Programming,10,3
+2,Java,Programming,9,4
+3,JavaScript,Programming,9,3
+4,SQL,Database,8,2
+5,Machine Learning,AI,10,5
+6,Deep Learning,AI,9,5
+7,Data Analysis,Data Science,8,3
+8,Project Management,Management,7,2
+9,Cloud Computing,Cloud,9,4
+10,Docker,DevOps,8,3
+11,Kubernetes,DevOps,8,4
+12,React,Frontend,9,3
+13,Angular,Frontend,8,4
+14,DevOps,DevOps,9,4
+15,NoSQL,Database,7,3
+16,Big Data,Data Science,8,4
+17,Mobile Development,Mobile,8,4
+18,UI/UX Design,Design,7,3
+19,Scrum,Management,7,2
+20,Testing,QA,8,3 

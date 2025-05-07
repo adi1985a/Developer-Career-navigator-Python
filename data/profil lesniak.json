@@ -1,0 +1,19 @@
+{
+    "name": "adrian lesniak",
+    "email": "adr.lesniak@gmail.com",
+    "location": "Oslo",
+    "phone": "234523462",
+    "current_role": "Full-stack developer",
+    "experience_years": 4,
+    "industry": "Communication",
+    "education": "Engineer",
+    "salary_expectation": 0,
+    "skills": [
+        "Python",
+        "C++",
+        "Html",
+        "Css",
+        "Java",
+        "AI"
+    ]
+}

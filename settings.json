@@ -1,0 +1,6 @@
+{
+    "output_dir": "output/",
+    "autosave": true,
+    "export_format": "JSON",
+    "theme": "Light"
+}

@@ -1,0 +1,60 @@
+{
+    "timestamp": "2025-03-30T05:33:02.546247",
+    "career_paths": [],
+    "skill_recommendations": [],
+    "market_insights": {
+        "top_emerging_skills": [
+            {
+                "skill": "Transformers",
+                "growth_rate": 123.5,
+                "current_demand": 75
+            },
+            {
+                "skill": "Kubernetes",
+                "growth_rate": 98.3,
+                "current_demand": 120
+            },
+            {
+                "skill": "MLOps",
+                "growth_rate": 87.2,
+                "current_demand": 60
+            },
+            {
+                "skill": "React",
+                "growth_rate": 76.5,
+                "current_demand": 200
+            },
+            {
+                "skill": "FastAPI",
+                "growth_rate": 70.1,
+                "current_demand": 50
+            },
+            {
+                "skill": "Terraform",
+                "growth_rate": 65.8,
+                "current_demand": 85
+            },
+            {
+                "skill": "GraphQL",
+                "growth_rate": 63.2,
+                "current_demand": 70
+            },
+            {
+                "skill": "Streamlit",
+                "growth_rate": 58.9,
+                "current_demand": 40
+            },
+            {
+                "skill": "PyTorch",
+                "growth_rate": 55.4,
+                "current_demand": 90
+            },
+            {
+                "skill": "Rust",
+                "growth_rate": 53.7,
+                "current_demand": 45
+            }
+        ],
+        "market_outlook": "positive"
+    }
+}

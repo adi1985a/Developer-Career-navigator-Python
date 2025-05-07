@@ -1,0 +1,11 @@
+role_id,role_name,level,avg_salary,required_skills,experience_years
+1,Junior Python Developer,Junior,8000,1;3;4,0
+2,Python Developer,Mid,15000,1;3;4;7,2
+3,Senior Python Developer,Senior,25000,1;3;4;7;15,5
+4,Data Scientist,Mid,18000,1;4;5;7;16,3
+5,Machine Learning Engineer,Senior,22000,1;5;6;16,5
+6,Data Engineer,Mid,17000,1;4;15;16,3
+7,Full Stack Developer,Mid,16000,1;2;3;12;13,3
+8,DevOps Engineer,Mid,18000,1;9;10;11;14,4
+9,Project Manager,Senior,20000,8;19,6
+10,CTO,Executive,35000,5;8;9;14;19,10 
