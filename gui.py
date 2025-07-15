@@ -9,6 +9,9 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from datetime import datetime
 import matplotlib.pyplot as plt
 from PIL import Image, ImageTk
+import urllib.request
+from io import BytesIO
+from fpdf import FPDF
 
 from main import AICareerNavigator
 
@@ -54,84 +57,88 @@ class CareerNavigatorGUI:
         # Set default language
         self.current_language = 'English'
         
-        # Rest of initialization
+        # Initialization
         self.check_data_files()
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
         
-        # Ustawienie styluing
+        # Styling
         self.style = ttk.Style()
-        self.style.theme_use('clam')  # Użyj jednego z dostępnych motywów: 'clam', 'alt', 'default', 'classic'
-        # Sprawdź i utwórz pliki danych jeśli potrzeba
-        # Koloryck_data_files()
+        self.style.theme_use('clam')  # Use one of the available themes: 'clam', 'alt', 'default', 'classic'
         self.primary_color = "#3498db"  # Blue
         self.secondary_color = "#2ecc71"  # Green
         self.bg_color = "#f5f5f5"  # Light gray
         self.text_color = "#2c3e50"  # Dark blue
         self.accent_color = "#e74c3c"  # Red
         
-        # Konfiguracja stylów
+        # Style configuration
         self.style.configure('TFrame', background=self.bg_color)
         self.style.configure('TButton', font=('Helvetica', 10), background=self.primary_color)
         self.style.configure('TLabel', font=('Helvetica', 10), background=self.bg_color, foreground=self.text_color)
         self.style.configure('Header.TLabel', font=('Helvetica', 16, 'bold'), background=self.bg_color, foreground=self.primary_color)
         self.style.configure('Subheader.TLabel', font=('Helvetica', 12, 'bold'), background=self.bg_color, foreground=self.text_color)
         
-        # Inicjalizacja AI Career Navigator
+        # Navigation button style
+        self.style.configure('Nav.TButton', 
+                           font=('Helvetica', 11, 'bold'),
+                           padding=(0, 10),
+                           background=self.primary_color,
+                           foreground='white')
+        self.style.map('Nav.TButton', 
+                      background=[('active', self.secondary_color), ('pressed', self.accent_color)])
+        
+        # Initialize AI Career Navigator
         self.navigator = AICareerNavigator()
         
-        # Dane użytkownika
+        # User data
         self.user_profile = {}
         self.recommendations = {}
         self.target_role = None
         
-        # Zmień domyślny język na angielski
+        # Set default language to English
         self.current_language = 'English'
         
-        # Inicjalizacja języka
+        # Initialize language
         self.initialize_language()
         
         # Load saved settings before initializing UI components
         self.load_saved_settings()
         
-        # Utworzenie interfejsu
+        # Load icons and logo
+        self.icons = {}
+        self.load_icons()
+        
+        # Create interface
         self.create_menu()
         self.create_main_frame()
         
-        # Domyślnie wyświetl panel główny
+        # Show dashboard by default
         self.show_dashboard()
         
-        # Zastosuj tłumaczenia
+        # Apply translations
         self.apply_translations()
     
     def check_data_files(self):
-        """Sprawdza czy wymagane pliki danych istnieją, jeśli nie - tworzy je z domyślnymi danymi"""
-        # Ścieżki do katalogów danych
+        """Checks if required data files exist, if not - creates them with default data"""
         data_dirs = ["data", "ai_career_navigator/data"]
-        
         data_files = {
             "skills_database.csv": "skill_id,skill_name,category,relevance_score,learning_difficulty\n1,Python,Programming,10,3\n2,Java,Programming,9,4",
             "job_market_data.csv": "date,skill,demand,avg_salary,num_openings\n2024-01-01,Python,10,15000,500\n2024-01-01,Java,8,14000,450",
             "roles_database.csv": "role_id,role_name,level,avg_salary,required_skills,experience_years\n1,Junior Python Developer,Junior,8000,1;3;4,0"
         }
-        
-        # Utwórz pliki w obu lokalizacjach
         for data_dir in data_dirs:
             if not os.path.exists(data_dir):
                 os.makedirs(data_dir)
-            
             for filename, default_content in data_files.items():
                 file_path = os.path.join(data_dir, filename)
                 if not os.path.exists(file_path):
                     with open(file_path, 'w', encoding='utf-8') as f:
                         f.write(default_content)
-                    print(f"Utworzono plik {file_path}")
+                    print(f"Created file {file_path}")
     
     def create_menu(self):
         """Create the main menu"""
         menubar = tk.Menu(self.root)
         self.root.config(menu=menubar)
-        
-        # File menu
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="File", menu=file_menu)
         file_menu.add_command(label="Load CV", command=self.load_cv)
@@ -139,53 +146,45 @@ class CareerNavigatorGUI:
         file_menu.add_command(label="Save Profile", command=self.save_profile)
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.root.quit)
-        
-        # Analysis menu
         analysis_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Analysis", menu=analysis_menu)
         analysis_menu.add_command(label="CV Analysis", command=lambda: self.show_frame('cv_analysis'))
         analysis_menu.add_command(label="Career Path", command=lambda: self.show_frame('career_path'))
         analysis_menu.add_command(label="Career Simulation", command=lambda: self.show_frame('career_simulation'))
         analysis_menu.add_command(label="Market Trends", command=lambda: self.show_frame('market_trends'))
-        
-        # Help menu
         help_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Help", menu=help_menu)
         help_menu.add_command(label="About", command=self.show_about)
         help_menu.add_command(label="Instructions", command=self.show_help)
     
     def create_main_frame(self):
-        """Tworzenie głównego kontenera na ramki"""
+        """Create the main container for frames"""
         self.main_frame = ttk.Frame(self.root)
         self.main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        
-        # Kontener na przyciski nawigacyjne
         self.nav_frame = ttk.Frame(self.main_frame)
         self.nav_frame.pack(side=tk.LEFT, fill=tk.Y, padx=(0, 10))
-        
-        # Przyciski nawigacyjne
         nav_buttons = [
-            ("Dashboard", self.show_dashboard),
-            ("User Profile", lambda: self.show_frame('user_profile')),
-            ("CV Analysis", lambda: self.show_frame('cv_analysis')),
-            ("Career Path", lambda: self.show_frame('career_path')),
-            ("Career Simulation", lambda: self.show_frame('career_simulation')),
-            ("Market Trends", lambda: self.show_frame('market_trends')),
-            ("Settings", lambda: self.show_frame('settings'))
+            ("Dashboard", self.show_dashboard, 'dashboard'),
+            ("User Profile", lambda: self.show_frame('user_profile'), 'user'),
+            ("CV Analysis", lambda: self.show_frame('cv_analysis'), 'cv'),
+            ("Career Path", lambda: self.show_frame('career_path'), 'path'),
+            ("Career Simulation", lambda: self.show_frame('career_simulation'), 'simulation'),
+            ("Market Trends", lambda: self.show_frame('market_trends'), 'trends'),
+            ("Settings", lambda: self.show_frame('settings'), 'settings')
         ]
+        for text, command, icon_key in nav_buttons:
+            btn = ttk.Button(self.nav_frame, text=text, command=command, style='Nav.TButton', width=22)
+            if self.icons.get(icon_key):
+                btn.config(image=self.icons[icon_key], compound=tk.LEFT)
+            btn.pack(fill=tk.X, pady=6, padx=4)
         
-        for text, command in nav_buttons:
-            btn = ttk.Button(self.nav_frame, text=text, command=command, width=20)
-            btn.pack(fill=tk.X, pady=5)
-        
-        # Kontener na zawartość
+        # Ustaw stałą szerokość dla nav_frame, aby przyciski były równo
+        self.nav_frame.update_idletasks()
+        self.nav_frame.config(width=220)
+
         self.content_frame = ttk.Frame(self.main_frame)
         self.content_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
-        
-        # Inicjalizacja ramek dla różnych widoków
         self.frames = {}
-        
-        # Utwórz ramki dla każdego widoku
         self.create_dashboard_frame()
         self.create_user_profile_frame()
         self.create_cv_analysis_frame()
@@ -195,23 +194,25 @@ class CareerNavigatorGUI:
         self.create_settings_frame()
     
     def show_frame(self, frame_name):
-        """Pokazuje wybraną ramkę"""
-        # Ukryj wszystkie ramki
+        """Show the selected frame"""
         for frame in self.frames.values():
             frame.pack_forget()
-        
-        # Pokaż wybraną ramkę
         if frame_name in self.frames:
             self.frames[frame_name].pack(fill=tk.BOTH, expand=True)
     
     def create_dashboard_frame(self):
-        """Create the dashboard frame"""
-        dashboard = ttk.Frame(self.content_frame)
+        """Create the dashboard frame with modern style and logo"""
+        dashboard = ttk.Frame(self.content_frame, style='TFrame')
         self.frames['dashboard'] = dashboard
         
-        # Header
-        header = ttk.Label(dashboard, text="AI Career Navigator", style='Header.TLabel')
-        header.pack(pady=(0, 20))
+        # Logo and header
+        header_frame = ttk.Frame(dashboard, style='TFrame')
+        header_frame.pack(pady=(0, 20))
+        if self.icons.get('logo'):
+            logo_label = ttk.Label(header_frame, image=self.icons['logo'], background=self.bg_color)
+            logo_label.pack(side=tk.LEFT, padx=(0, 15))
+        header = ttk.Label(header_frame, text="AI Career Navigator", style='Header.TLabel', font=('Helvetica', 22, 'bold'))
+        header.pack(side=tk.LEFT)
         
         # Information about the system
         info_text = """
@@ -225,51 +226,60 @@ class CareerNavigatorGUI:
         
         Start by loading your CV or creating a profile.
         """
-        
-        info_label = ttk.Label(dashboard, text=info_text, wraplength=700, justify='left')
+        info_label = ttk.Label(dashboard, text=info_text, wraplength=700, justify='left', font=('Helvetica', 12), background=self.bg_color)
         info_label.pack(pady=10)
         
-        # Panel kart ze statystykami
-        stats_frame = ttk.Frame(dashboard)
-        stats_frame.pack(fill=tk.X, pady=20)
-        
+        # Stats cards (modern look)
+        stats_frame = ttk.Frame(dashboard, style='TFrame')
+        stats_frame.pack(fill=tk.X, pady=10)
+        stats_frame.pack_propagate(False)
         stats_cards = [
-            ("Skills", "0", "Number of identified skills"),
-            ("Market Trends", "15", "Skills with the highest demand growth"),
-            ("Earning Potential", "0", "Predicted salary growth over 5 years"),
-            ("Skill Gaps", "0", "Number of skill gaps to fill")
+            ("Skills", "0", "Number of identified skills", 'cv'),
+            ("Market Trends", "15", "Skills with the highest demand growth", 'trends'),
+            ("Earning Potential", "0", "Predicted salary growth over 5 years", 'simulation'),
+            ("Skill Gaps", "0", "Number of skill gaps to fill", 'settings')
         ]
-        
-        for i, (title, value, desc) in enumerate(stats_cards):
-            card = ttk.Frame(stats_frame, borderwidth=2, relief="raised")
-            card.grid(row=0, column=i, padx=10, pady=10, sticky="nsew")
-            
-            ttk.Label(card, text=title, style='Subheader.TLabel').pack(pady=(10, 5))
-            ttk.Label(card, text=value, font=('Helvetica', 24, 'bold'), foreground=self.primary_color).pack(pady=5)
-            ttk.Label(card, text=desc, wraplength=150, justify='center').pack(pady=(5, 10))
-        
-        # Ustaw równą szerokość kolumn
+        for i, (title, value, desc, icon_key) in enumerate(stats_cards):
+            card = tk.Frame(stats_frame, bg="white", bd=0, highlightthickness=0)
+            card.grid(row=0, column=i, padx=0, pady=0, sticky="nsew")
+            if self.icons.get(icon_key):
+                icon_label = tk.Label(card, image=self.icons[icon_key], bg="white")
+                icon_label.pack(pady=(10, 0))
+            tk.Label(card, text=title, font=('Helvetica', 12, 'bold'), fg=self.primary_color, bg="white").pack(pady=(5, 0))
+            tk.Label(card, text=value, font=('Helvetica', 24, 'bold'), fg=self.secondary_color, bg="white").pack(pady=5)
+            tk.Label(card, text=desc, wraplength=150, justify='center', bg="white").pack(pady=(5, 10))
+            card.config(highlightbackground=self.primary_color, highlightcolor=self.primary_color, highlightthickness=2, bd=0)
         for i in range(4):
             stats_frame.columnconfigure(i, weight=1)
         
-        # Przyciski szybkiego dostępu
-        quick_access = ttk.Frame(dashboard)
-        quick_access.pack(fill=tk.X, pady=20)
-        
+        # Quick access buttons with icons
+        quick_access = ttk.Frame(dashboard, style='TFrame')
+        quick_access.pack(fill=tk.X, pady=10)
+        quick_access.pack_propagate(False)
         quick_buttons = [
-            ("Analyze CV", lambda: self.show_frame('cv_analysis')),
-            ("Check Trends", lambda: self.show_frame('market_trends')),
-            ("Generate Path", lambda: self.show_frame('career_path')),
-            ("Simulate Career", lambda: self.show_frame('career_simulation'))
+            ("Analyze CV", lambda: self.show_frame('cv_analysis'), 'cv'),
+            ("Check Trends", lambda: self.show_frame('market_trends'), 'trends'),
+            ("Generate Path", lambda: self.show_frame('career_path'), 'path'),
+            ("Simulate Career", lambda: self.show_frame('career_simulation'), 'simulation')
         ]
-        
-        for i, (text, command) in enumerate(quick_buttons):
-            btn = ttk.Button(quick_access, text=text, command=command)
-            btn.grid(row=0, column=i, padx=10, pady=10, sticky="nsew")
-        
-        # Ustaw równą szerokość kolumn
+        for i, (text, command, icon_key) in enumerate(quick_buttons):
+            btn = ttk.Button(quick_access, text=text, command=command, style='Accent.TButton')
+            if self.icons.get(icon_key):
+                btn.config(image=self.icons[icon_key], compound=tk.LEFT)
+            btn.grid(row=0, column=i, padx=0, pady=0, sticky="nsew")
         for i in range(4):
             quick_access.columnconfigure(i, weight=1)
+
+        # Modernize style for Accent.TButton
+        self.style.configure('Accent.TButton', 
+                           font=('Helvetica', 11, 'bold'), 
+                           foreground='white', 
+                           background=self.primary_color, 
+                           borderwidth=0, 
+                           focusthickness=3, 
+                           focuscolor=self.accent_color,
+                           padding=(0, 12))
+        self.style.map('Accent.TButton', background=[('active', self.secondary_color)])
     
     def create_user_profile_frame(self):
         """Create the user profile frame"""
@@ -445,6 +455,10 @@ class CareerNavigatorGUI:
         # Dodajemy scrolledText dla wyników analizy
         self.cv_results_text = scrolledtext.ScrolledText(results_frame, wrap=tk.WORD, width=50, height=20)
         self.cv_results_text.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        
+        # Dodaj przycisk eksportu do PDF
+        export_pdf_btn = ttk.Button(results_frame, text="Export to PDF", command=self.export_cv_analysis_to_pdf)
+        export_pdf_btn.pack(pady=8)
         
         # Pozostałe komponenty (tabele, podsumowanie, rekomendacje)
         bottom_frame = ttk.Frame(analysis_frame)
@@ -2370,147 +2384,6 @@ INSTRUCTIONS FOR MARKET TRENDS ANALYSIS:
         
         return path[next_index]
 
-    def create_market_trends_frame(self):
-        """Create the market trends analysis frame"""
-        trends_frame = ttk.Frame(self.content_frame)
-        self.frames['market_trends'] = trends_frame
-        
-        # Header
-        header = ttk.Label(trends_frame, text="Market Trends", style='Header.TLabel')
-        header.pack(pady=(0, 20))
-        
-        # Help button
-        help_button = ttk.Button(trends_frame, text="Instructions", command=self.show_trends_instructions)
-        help_button.pack(pady=(0, 10))
-        
-        # Ramka formularza
-        form_frame = ttk.Frame(trends_frame)
-        form_frame.pack(fill=tk.X, padx=20, pady=10)
-        
-        # Parametry analizy
-        params_frame = ttk.LabelFrame(form_frame, text="Analysis Parameters")
-        params_frame.pack(fill=tk.X, padx=10, pady=10)
-        
-        # Kategoria umiejętności
-        category_frame = ttk.Frame(params_frame)
-        category_frame.pack(fill=tk.X, padx=5, pady=5)
-        ttk.Label(category_frame, text="Skill Category:").pack(side=tk.LEFT, padx=5)
-        
-        categories = ["Programming", "DevOps", "Data Science", "Frontend", "Backend", "Mobile", "UX/UI", "Soft Skills"]
-        self.skill_category_var = tk.StringVar(value=categories[0])
-        category_combo = ttk.Combobox(category_frame, textvariable=self.skill_category_var, values=categories, width=30)
-        category_combo.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
-        
-        # Zakres czasowy
-        time_frame = ttk.Frame(params_frame)
-        time_frame.pack(fill=tk.X, padx=5, pady=5)
-        ttk.Label(time_frame, text="Time Range:").pack(side=tk.LEFT, padx=5)
-        
-        time_ranges = ["Last year", "Last 2 years", "Last 5 years"]
-        self.time_range_var = tk.StringVar(value=time_ranges[0])
-        time_combo = ttk.Combobox(time_frame, textvariable=self.time_range_var, values=time_ranges, width=30)
-        time_combo.pack(side=tk.LEFT, padx=5, fill=tk.X, expand=True)
-        
-        # Minimalna popularność
-        popularity_frame = ttk.Frame(params_frame)
-        popularity_frame.pack(fill=tk.X, padx=5, pady=5)
-        ttk.Label(popularity_frame, text="Minimum Popularity (1-10):").pack(side=tk.LEFT, padx=5)
-        self.min_popularity_var = tk.StringVar(value="3")
-        ttk.Spinbox(popularity_frame, from_=1, to=10, textvariable=self.min_popularity_var, width=5).pack(side=tk.LEFT, padx=5)
-        
-        # Przyciski akcji
-        buttons_frame = ttk.Frame(form_frame)
-        buttons_frame.pack(fill=tk.X, padx=10, pady=10)
-        
-        ttk.Button(buttons_frame, text="Analyze Trends", command=self.analyze_market_trends).pack(side=tk.LEFT, padx=5)
-        ttk.Button(buttons_frame, text="Clear", command=self.clear_trends_form).pack(side=tk.LEFT, padx=5)
-        
-        # Ramka na wyniki
-        results_frame = ttk.LabelFrame(trends_frame, text="Analysis Results")
-        results_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
-        
-        # Podziel wyniki na zakładki
-        tab_control = ttk.Notebook(results_frame)
-        tab_control.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
-        
-        # Zakładka z wykresem popytu
-        self.demand_frame = ttk.Frame(tab_control)
-        tab_control.add(self.demand_frame, text='Demand')
-        
-        # Zakładka z wykresem płac
-        self.salary_frame = ttk.Frame(tab_control)
-        tab_control.add(self.salary_frame, text='Salaries')
-        
-        # Zakładka z gorącymi umiejętnościami
-        hot_skills_frame = ttk.Frame(tab_control)
-        tab_control.add(hot_skills_frame, text='Hot Skills')
-        
-        # Tabela gorących umiejętności
-        hot_skills_columns = ('skill', 'growth', 'demand', 'trend')
-        self.hot_skills_tree = ttk.Treeview(hot_skills_frame, columns=hot_skills_columns, show='headings')
-        
-        # Definicja nagłówków
-        self.hot_skills_tree.heading('skill', text='Skill')
-        self.hot_skills_tree.heading('growth', text='Growth')
-        self.hot_skills_tree.heading('demand', text='Demand')
-        self.hot_skills_tree.heading('trend', text='Trend')
-        
-        # Ustawienie szerokości kolumn
-        self.hot_skills_tree.column('skill', width=150)
-        self.hot_skills_tree.column('growth', width=100)
-        self.hot_skills_tree.column('demand', width=100)
-        self.hot_skills_tree.column('trend', width=150)
-        
-        # Dodanie drzewa i paska przewijania
-        self.hot_skills_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        scrollbar = ttk.Scrollbar(hot_skills_frame, orient=tk.VERTICAL, command=self.hot_skills_tree.yview)
-        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.hot_skills_tree.configure(yscrollcommand=scrollbar.set)
-        
-        # Zakładka z najlepiej płatnymi umiejętnościami
-        top_paid_frame = ttk.Frame(tab_control)
-        tab_control.add(top_paid_frame, text='Top Paid')
-        
-        # Tabela najlepiej płatnych umiejętności
-        top_paid_columns = ('skill', 'salary', 'difficulty', 'market_size')
-        self.top_paid_tree = ttk.Treeview(top_paid_frame, columns=top_paid_columns, show='headings')
-        
-        # Definicja nagłówków
-        self.top_paid_tree.heading('skill', text='Skill')
-        self.top_paid_tree.heading('salary', text='Average Salary')
-        self.top_paid_tree.heading('difficulty', text='Difficulty (1-10)')
-        self.top_paid_tree.heading('market_size', text='Market Size')
-        
-        # Ustawienie szerokości kolumn
-        self.top_paid_tree.column('skill', width=150)
-        self.top_paid_tree.column('salary', width=150)
-        self.top_paid_tree.column('difficulty', width=100)
-        self.top_paid_tree.column('market_size', width=100)
-        
-        # Dodanie drzewa i paska przewijania
-        self.top_paid_tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        scrollbar = ttk.Scrollbar(top_paid_frame, orient=tk.VERTICAL, command=self.top_paid_tree.yview)
-        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        self.top_paid_tree.configure(yscrollcommand=scrollbar.set)
-
-    def analyze_market_trends(self):
-        """Analyzes market trends based on selected parameters"""
-        category = self.skill_category_var.get()
-        time_range = self.time_range_var.get()
-        
-        try:
-            min_popularity = float(self.min_popularity_var.get())
-        except ValueError:
-            messagebox.showwarning("Warning", "Please enter a valid minimum popularity value.")
-            return
-        
-        messagebox.showinfo("Information", "Market trends analysis started. Results will be displayed upon completion.")
-        
-        # Uruchom analizę w osobnym wątku
-        threading.Thread(target=self._run_trends_analysis, args=(
-            category, time_range, min_popularity
-        ), daemon=True).start()
-
     def on_closing(self):
         """Handle window closing event"""
         try:
@@ -2567,7 +2440,7 @@ INSTRUCTIONS FOR MARKET TRENDS ANALYSIS:
                     self.theme_var.set(settings.get('theme', "Light"))
                     
                     # Apply theme immediately
-                    self.change_theme()
+                    self.change_theme(show_message=False)
                     
                     logger.info("Settings loaded successfully")
             else:
@@ -3108,6 +2981,58 @@ INSTRUCTIONS FOR CAREER SIMULATION:
             next_index = min(current_index + 1, target_index)
 
         return career_path[next_index]
+
+    def load_icons(self):
+        """Load icons from local files or URLs"""
+        # Create simple text-based icons as fallback
+        def create_text_icon(text, size=(24, 24)):
+            img = Image.new('RGBA', size, (0, 0, 0, 0))
+            return ImageTk.PhotoImage(img)
+        
+        icon_urls = {
+            'dashboard': 'https://cdn-icons-png.flaticon.com/512/1828/1828859.png',
+            'user': 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+            'cv': 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+            'path': 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png',
+            'simulation': 'https://cdn-icons-png.flaticon.com/512/3524/3524659.png',
+            'trends': 'https://cdn-icons-png.flaticon.com/512/1828/1828919.png',
+            'settings': 'https://cdn-icons-png.flaticon.com/512/2099/2099058.png',
+            'logo': 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+        }
+        
+        for key, url in icon_urls.items():
+            try:
+                with urllib.request.urlopen(url, timeout=5) as u:
+                    raw_data = u.read()
+                image = Image.open(BytesIO(raw_data)).resize((24, 24), Image.Resampling.LANCZOS)
+                self.icons[key] = ImageTk.PhotoImage(image)
+                print(f"Loaded icon: {key}")
+            except Exception as e:
+                print(f"Failed to load icon {key}: {e}")
+                # Create a simple colored square as fallback
+                img = Image.new('RGBA', (24, 24), self.primary_color)
+                self.icons[key] = ImageTk.PhotoImage(img)
+
+    def export_cv_analysis_to_pdf(self):
+        """Eksportuje wyniki analizy CV do pliku PDF"""
+        from tkinter import filedialog, messagebox
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+        pdf.cell(0, 10, "CV Analysis Results", ln=True, align='C')
+        pdf.ln(10)
+        # Pobierz tekst z okna wyników
+        text = self.cv_results_text.get('1.0', tk.END)
+        for line in text.split('\n'):
+            pdf.multi_cell(0, 8, line)
+        # Zapisz plik
+        file_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
+        if file_path:
+            try:
+                pdf.output(file_path)
+                messagebox.showinfo("Success", f"PDF exported successfully to:\n{file_path}")
+            except Exception as e:
+                messagebox.showerror("Error", f"Failed to export PDF: {e}")
 
 if __name__ == "__main__":
     root = tk.Tk()

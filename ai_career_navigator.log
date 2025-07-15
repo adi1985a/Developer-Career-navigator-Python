@@ -552,3 +552,261 @@
 2025-03-30 23:52:13,897 - __main__ - INFO - Settings loaded successfully
 2025-03-30 23:52:14,060 - __main__ - INFO - Applied translations for language: English
 2025-03-30 23:53:29,291 - modules.career_path - INFO - Generujê œcie¿kê kariery: {'current_role': 'junior developer', 'target_role': 'senior developer', 'time_frame': 5, 'priority': 'Salary', 'user_skills': ['java', 'python', 'c++', 'Python', 'Java', 'JavaScript', 'Project Management'], 'experience_years': 4}
+2025-07-15 00:41:41,610 - __main__ - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 00:41:41,610 - __main__ - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 00:41:43,400 - __main__ - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 00:41:43,400 - __main__ - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 00:41:43,425 - __main__ - INFO - Inicjalizacja symulatora kariery
+2025-07-15 00:41:43,425 - __main__ - INFO - £adowanie danych systemowych
+2025-07-15 00:41:43,425 - __main__ - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 00:41:43,426 - __main__ - INFO - £adowanie danych rynkowych
+2025-07-15 00:41:43,426 - __main__ - INFO - Dane za³adowane pomyœlnie
+2025-07-15 00:41:43,426 - __main__ - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 00:41:43,426 - __main__ - INFO - Rozpoczêcie analizy profilu u¿ytkownika
+2025-07-15 00:41:43,427 - __main__ - INFO - Analiza profilu u¿ytkownika zakoñczona
+2025-07-15 00:41:43,427 - __main__ - INFO - Generowanie rekomendacji kariery
+2025-07-15 00:41:43,441 - __main__ - INFO - Generowanie rekomendacji kariery zakoñczone
+2025-07-15 00:41:43,474 - __main__ - INFO - Rekomendacje zapisane do pliku: career_recommendations.json
+2025-07-15 00:42:53,311 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 00:42:53,327 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 00:42:54,925 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 00:42:54,925 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 00:42:54,942 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 00:42:54,942 - main - INFO - £adowanie danych systemowych
+2025-07-15 00:42:54,942 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 00:42:54,943 - main - INFO - £adowanie danych rynkowych
+2025-07-15 00:42:54,943 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 00:42:54,943 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 00:42:56,860 - __main__ - INFO - Settings loaded successfully
+2025-07-15 00:42:57,131 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:06:24,163 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:07:00,004 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:07:00,004 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:07:01,845 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:07:01,845 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:07:01,868 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:07:01,868 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:07:01,868 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:07:01,868 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:07:01,868 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:07:01,868 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:07:05,606 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:14:16,383 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:14:16,400 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:14:18,158 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:14:18,160 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:14:18,170 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:14:18,170 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:14:18,170 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:14:18,171 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:14:18,171 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:14:18,171 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:14:19,630 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:14:43,309 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:14:43,329 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:14:44,921 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:14:44,928 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:14:44,930 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:14:44,930 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:14:44,930 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:14:44,930 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:14:44,930 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:14:44,930 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:14:46,937 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:18:25,871 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:18:25,887 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:18:27,527 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:18:27,527 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:18:27,543 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:18:27,543 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:18:27,543 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:18:27,543 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:18:27,543 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:18:27,543 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:18:29,304 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:18:31,677 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:19:35,223 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:19:45,454 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:19:45,470 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:19:47,025 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:19:47,025 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:19:47,046 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:19:47,046 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:19:47,047 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:19:47,047 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:19:47,047 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:19:47,048 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:19:48,586 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:19:51,009 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:19:56,941 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:22:42,747 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:22:42,756 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:22:44,448 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:22:44,450 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:22:44,455 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:22:44,455 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:22:44,455 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:22:44,455 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:22:44,455 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:22:44,466 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:22:46,008 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:22:51,394 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:25:57,172 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:26:06,896 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:26:06,911 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:26:08,374 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:26:08,389 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:26:08,389 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:26:08,389 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:26:08,389 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:26:08,389 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:26:08,389 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:26:08,402 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:26:10,712 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:26:12,128 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:28:42,787 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:29:56,835 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:29:56,851 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:29:58,385 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:29:58,385 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:29:58,385 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:29:58,385 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:29:58,385 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:29:58,385 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:29:58,385 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:29:58,385 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:30:47,600 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:33:59,990 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:33:59,996 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:34:01,625 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:34:01,629 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:34:01,651 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:34:01,651 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:34:01,652 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:34:01,652 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:34:01,653 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:34:01,653 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:34:01,655 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:34:03,432 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:47:35,058 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:47:46,558 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:47:46,580 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:47:48,473 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:47:48,475 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:47:48,488 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:47:48,488 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:47:48,488 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:47:48,489 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:47:48,489 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:47:48,490 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:47:48,495 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:47:53,295 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:49:57,121 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:50:08,621 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:50:08,638 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:50:10,267 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:50:10,269 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:50:10,280 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:50:10,281 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:50:10,281 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:50:10,281 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:50:10,282 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:50:10,282 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:50:10,287 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:50:13,656 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:50:47,993 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:51:05,967 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:51:05,983 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:51:07,601 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:51:07,603 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:51:07,614 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:51:07,614 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:51:07,615 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:51:07,615 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:51:07,615 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:51:07,616 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:51:07,625 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:51:12,466 - __main__ - INFO - Applied translations for language: English
+2025-07-15 01:53:24,564 - modules.career_path - INFO - Generujê œcie¿kê kariery: {'current_role': 'Junior developer', 'target_role': 'Senior Developer', 'time_frame': 5, 'priority': 'Skill development', 'user_skills': ['Python', 'Java', 'JavaScript', 'SQL', 'Machine Learning', 'Project Management', 'Docker', 'React', 'Scrum'], 'experience_years': 0}
+2025-07-15 01:56:39,170 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:56:54,307 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:57:05,453 - __main__ - INFO - Settings saved successfully
+2025-07-15 01:57:17,653 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 01:57:17,669 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 01:57:19,166 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 01:57:19,168 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 01:57:19,179 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 01:57:19,179 - main - INFO - £adowanie danych systemowych
+2025-07-15 01:57:19,180 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 01:57:19,180 - main - INFO - £adowanie danych rynkowych
+2025-07-15 01:57:19,180 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 01:57:19,181 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 01:57:19,186 - __main__ - INFO - Settings loaded successfully
+2025-07-15 01:57:23,685 - __main__ - INFO - Applied translations for language: English
+2025-07-15 02:00:38,860 - __main__ - INFO - Settings saved successfully
+2025-07-15 02:00:47,933 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 02:00:47,953 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 02:00:49,536 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 02:00:49,552 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 02:00:49,552 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 02:00:49,552 - main - INFO - £adowanie danych systemowych
+2025-07-15 02:00:49,552 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 02:00:49,552 - main - INFO - £adowanie danych rynkowych
+2025-07-15 02:00:49,552 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 02:00:49,552 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 02:00:49,572 - __main__ - INFO - Settings loaded successfully
+2025-07-15 02:00:54,662 - __main__ - INFO - Applied translations for language: English
+2025-07-15 02:01:37,839 - __main__ - INFO - Settings saved successfully
+2025-07-15 02:01:46,148 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 02:01:46,163 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 02:01:47,566 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 02:01:47,566 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 02:01:47,566 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 02:01:47,566 - main - INFO - £adowanie danych systemowych
+2025-07-15 02:01:47,566 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 02:01:47,566 - main - INFO - £adowanie danych rynkowych
+2025-07-15 02:01:47,566 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 02:01:47,581 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 02:01:47,586 - __main__ - INFO - Settings loaded successfully
+2025-07-15 02:01:51,730 - __main__ - INFO - Applied translations for language: English
+2025-07-15 02:04:00,212 - __main__ - INFO - Settings saved successfully
+2025-07-15 02:04:08,822 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 02:04:08,838 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 02:04:10,309 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 02:04:10,309 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 02:04:10,327 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 02:04:10,327 - main - INFO - £adowanie danych systemowych
+2025-07-15 02:04:10,327 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 02:04:10,328 - main - INFO - £adowanie danych rynkowych
+2025-07-15 02:04:10,328 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 02:04:10,328 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 02:04:10,331 - __main__ - INFO - Settings loaded successfully
+2025-07-15 02:04:14,793 - __main__ - INFO - Applied translations for language: English
+2025-07-15 02:04:27,148 - __main__ - INFO - Settings saved successfully
+2025-07-15 02:29:11,591 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 02:29:11,610 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 02:29:13,255 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 02:29:13,255 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 02:29:13,272 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 02:29:13,273 - main - INFO - £adowanie danych systemowych
+2025-07-15 02:29:13,273 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 02:29:13,273 - main - INFO - £adowanie danych rynkowych
+2025-07-15 02:29:13,274 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 02:29:13,274 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 02:29:13,275 - __main__ - INFO - Settings loaded successfully
+2025-07-15 02:29:17,724 - __main__ - INFO - Applied translations for language: English
+2025-07-15 02:38:39,365 - __main__ - INFO - Settings saved successfully
+2025-07-15 03:03:32,950 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-15 03:03:32,950 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-15 03:03:34,781 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-15 03:03:34,781 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-15 03:03:34,802 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-15 03:03:34,802 - main - INFO - £adowanie danych systemowych
+2025-07-15 03:03:34,802 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-15 03:03:34,802 - main - INFO - £adowanie danych rynkowych
+2025-07-15 03:03:34,802 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-15 03:03:34,802 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-15 03:03:34,802 - __main__ - INFO - Settings loaded successfully
+2025-07-15 03:03:36,089 - __main__ - INFO - Applied translations for language: English
+2025-07-15 03:07:20,802 - modules.career_path - INFO - Generujê œcie¿kê kariery: {'current_role': 'Junior Developer', 'target_role': 'Senior Developer', 'time_frame': 3, 'priority': 'Skill development', 'user_skills': ['C++', 'Java', 'Javascript', 'Python', 'React.js', 'Laravel', 'Css', 'JavaScript'], 'experience_years': 4}
+2025-07-15 03:08:53,473 - __main__ - INFO - Settings saved successfully
