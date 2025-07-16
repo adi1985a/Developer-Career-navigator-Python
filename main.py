@@ -306,14 +306,22 @@ def main():
     # Wczytaj CV jeśli podano
     cv_text = None
     if args.cv and os.path.isfile(args.cv):
-        with open(args.cv, 'r', encoding='utf-8') as f:
-            cv_text = f.read()
+        try:
+            with open(args.cv, 'r', encoding='utf-8') as f:
+                cv_text = f.read()
+        except Exception as e:
+            logger.error(f"Błąd podczas wczytywania pliku CV: {e}")
+            cv_text = None
     
     # Wczytaj profil jeśli podano
     profile_data = None
     if args.profile and os.path.isfile(args.profile):
-        with open(args.profile, 'r', encoding='utf-8') as f:
-            profile_data = json.load(f)
+        try:
+            with open(args.profile, 'r', encoding='utf-8') as f:
+                profile_data = json.load(f)
+        except Exception as e:
+            logger.error(f"Błąd podczas wczytywania profilu: {e}")
+            profile_data = None
     
     # Analizuj profil
     user_profile = navigator.analyze_user_profile(cv_text, profile_data)
@@ -328,11 +336,14 @@ def main():
     
     # Zapisz wynik
     output_path = args.output if args.output else 'career_recommendations.json'
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(recommendations, f, indent=4, default=str)
-        
-    logger.info(f"Rekomendacje zapisane do pliku: {output_path}")
-    print(f"Rekomendacje zapisane do pliku: {output_path}")
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(recommendations, f, indent=4, default=str)
+        logger.info(f"Rekomendacje zapisane do pliku: {output_path}")
+        print(f"Rekomendacje zapisane do pliku: {output_path}")
+    except Exception as e:
+        logger.error(f"Błąd podczas zapisu rekomendacji: {e}")
+        print(f"Błąd podczas zapisu rekomendacji: {e}")
 
 if __name__ == "__main__":
     main()

@@ -172,16 +172,24 @@ class CareerNavigatorGUI:
             ("Market Trends", lambda: self.show_frame('market_trends'), 'trends'),
             ("Settings", lambda: self.show_frame('settings'), 'settings')
         ]
+        # Nowoczesny układ: ikona nad tytułem, wszystko wyśrodkowane
         for text, command, icon_key in nav_buttons:
-            btn = ttk.Button(self.nav_frame, text=text, command=command, style='Nav.TButton', width=22)
+            btn_frame = ttk.Frame(self.nav_frame)
+            btn_frame.pack(fill=tk.X, pady=8, padx=4)
             if self.icons.get(icon_key):
-                btn.config(image=self.icons[icon_key], compound=tk.LEFT)
-            btn.pack(fill=tk.X, pady=6, padx=4)
-        
+                icon_label = ttk.Label(btn_frame, image=self.icons[icon_key], anchor='center', background=self.bg_color)
+                icon_label.pack(side=tk.TOP, pady=(0, 4))
+            btn = ttk.Button(
+                btn_frame,
+                text=text,
+                command=command,
+                style='Nav.TButton',
+                width=18
+            )
+            btn.pack(side=tk.TOP, anchor='center')
         # Ustaw stałą szerokość dla nav_frame, aby przyciski były równo
         self.nav_frame.update_idletasks()
         self.nav_frame.config(width=220)
-
         self.content_frame = ttk.Frame(self.main_frame)
         self.content_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
         self.frames = {}
@@ -2991,9 +2999,9 @@ INSTRUCTIONS FOR CAREER SIMULATION:
         
         icon_urls = {
             'dashboard': 'https://cdn-icons-png.flaticon.com/512/1828/1828859.png',
-            'user': 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-            'cv': 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-            'path': 'https://cdn-icons-png.flaticon.com/512/3595/3595455.png',
+            'user': 'https://cdn-icons-png.flaticon.com/512/747/747376.png',  # minimalistyczna czarna sylwetka
+            'cv': 'https://cdn-icons-png.flaticon.com/512/1828/1828925.png',  # ikona książki mono
+            'path': 'https://cdn-icons-png.flaticon.com/512/25/25694.png',
             'simulation': 'https://cdn-icons-png.flaticon.com/512/3524/3524659.png',
             'trends': 'https://cdn-icons-png.flaticon.com/512/1828/1828919.png',
             'settings': 'https://cdn-icons-png.flaticon.com/512/2099/2099058.png',

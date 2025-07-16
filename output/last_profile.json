@@ -1,23 +1,8 @@
 {
-    "name": "Adam Johnnson",
-    "email": "adj@gmail.com",
-    "location": "Paris",
-    "phone": "2342353",
-    "current_role": "Junior Developer",
-    "experience_years": 4,
-    "industry": "Programming",
-    "education": "Engineer",
-    "salary_expectation": 0,
     "skills": [
-        "C++",
-        "Java",
-        "Javascript",
         "Python",
-        "React.js",
-        "Laravel",
-        "Css",
+        "Java",
         "JavaScript",
-        "Teamwork",
-        "Communication"
+        "Project Management"
     ]
 }

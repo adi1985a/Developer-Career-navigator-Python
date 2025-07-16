@@ -38,8 +38,8 @@ career_simulator = CareerSimulator(
 @app.route('/api/analyze-cv', methods=['POST'])
 def analyze_cv():
     """Analizuje CV i zwraca zidentyfikowane umiejętności i poziomy"""
-    if not request.json or 'cv_text' not in request.json:
-        return jsonify({'error': 'Brak wymaganego parametru cv_text'}), 400
+    if not request.json or 'cv_text' not in request.json or not isinstance(request.json['cv_text'], str):
+        return jsonify({'error': 'Missing or invalid parameter: cv_text (string required)'}), 400
     
     cv_text = request.json['cv_text']
     
@@ -68,9 +68,14 @@ def get_market_trends():
         # Pobierz najważniejsze trendy
         top_skills = market_trends.get_top_emerging_skills(10)
         
+        if hasattr(top_skills, 'to_dict'):
+            top_skills_list = top_skills.to_dict('records')
+        else:
+            top_skills_list = [dict(zip(['skill', 'growth', 'demand', 'trend'], row)) for row in top_skills]
+        
         return jsonify({
             'status': 'success',
-            'top_emerging_skills': top_skills.to_dict('records') if not top_skills.empty else [],
+            'top_emerging_skills': top_skills_list,
             'timestamp': datetime.now().isoformat()
         })
     except Exception as e:
@@ -80,8 +85,8 @@ def get_market_trends():
 @app.route('/api/career-path', methods=['POST'])
 def generate_career_path():
     """Generuje ścieżkę kariery na podstawie aktualnej i docelowej roli"""
-    if not request.json or 'current_role_id' not in request.json:
-        return jsonify({'error': 'Brak wymaganego parametru current_role_id'}), 400
+    if not request.json or 'current_role_id' not in request.json or not isinstance(request.json['current_role_id'], (str, int)):
+        return jsonify({'error': 'Missing or invalid parameter: current_role_id (string or int required)'}), 400
     
     current_role_id = request.json['current_role_id']
     target_role_id = request.json.get('target_role_id', None)
@@ -112,8 +117,8 @@ def generate_career_path():
 @app.route('/api/career-simulation', methods=['POST'])
 def simulate_career():
     """Symuluje przyszłą karierę na podstawie profilu użytkownika"""
-    if not request.json or 'user_profile' not in request.json:
-        return jsonify({'error': 'Brak wymaganego parametru user_profile'}), 400
+    if not request.json or 'user_profile' not in request.json or not isinstance(request.json['user_profile'], dict):
+        return jsonify({'error': 'Missing or invalid parameter: user_profile (dict required)'}), 400
     
     user_profile = request.json['user_profile']
     target_role = request.json.get('target_role', None)
@@ -143,8 +148,8 @@ def simulate_career():
 @app.route('/api/recommend-skills', methods=['POST'])
 def recommend_skills():
     """Rekomenduje umiejętności do zdobycia dla osiągnięcia docelowej roli"""
-    if not request.json or 'current_skills' not in request.json or 'target_role_id' not in request.json:
-        return jsonify({'error': 'Brak wymaganych parametrów current_skills lub target_role_id'}), 400
+    if not request.json or 'current_skills' not in request.json or 'target_role_id' not in request.json or not isinstance(request.json['current_skills'], list):
+        return jsonify({'error': 'Missing or invalid parameters: current_skills (list) and target_role_id required'}), 400
     
     current_skills = request.json['current_skills']
     target_role_id = request.json['target_role_id']
