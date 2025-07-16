@@ -1,5 +1,5 @@
 # 🧭🤖 AI Career Navigator: Personalized Career Path & Skills Advisor 🚀
-_Nowoczesna aplikacja desktopowa (GUI) oraz narzędzie CLI do analizy kariery, rekomendacji rozwoju i symulacji ścieżek zawodowych z wykorzystaniem AI i wizualizacji._
+_Modern desktop application (GUI) and CLI tool for career analysis, development recommendations, and career path simulation using AI and visualizations._
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
@@ -26,88 +26,88 @@ _Nowoczesna aplikacja desktopowa (GUI) oraz narzędzie CLI do analizy kariery, r
 
 ## 📄 Overview
 
-**AI Career Navigator** to nowoczesna aplikacja desktopowa (GUI) oraz narzędzie CLI, które wspiera użytkownika w planowaniu kariery, analizie kompetencji, prognozowaniu rozwoju i podejmowaniu decyzji zawodowych. Dzięki zaawansowanej analizie CV/profilu, dynamicznym rekomendacjom, interaktywnym wykresom i symulacjom „co jeśli”, aplikacja pozwala świadomie zarządzać rozwojem zawodowym.
+**AI Career Navigator** is a modern desktop application (GUI) and CLI tool that supports users in career planning, competency analysis, development forecasting, and professional decision-making. Through advanced CV/profile analysis, dynamic recommendations, interactive charts, and "what-if" simulations, the application enables conscious management of professional development.
 
 ---
 
 ## ✨ Key Features
 
-- 🖥️ **Nowoczesny interfejs graficzny (GUI):**
-  - Dashboard z insightami, wykresami, sekcją What-if, dark mode i responsywnym układem.
-  - Dynamiczne rekomendacje i alerty na podstawie profilu i symulacji.
-- 📊 **Zaawansowane wizualizacje:**
-  - Wykres radarowy (spider chart) luk kompetencyjnych.
-  - Porównawcze wykresy zarobków (scenariusz bazowy vs What-if).
-  - Interaktywne wykresy trendów rynkowych i rozwoju umiejętności.
-- 🤔 **Symulacje „What-if”:**
-  - Możliwość sprawdzenia, jak nauka nowej umiejętności lub zmiana branży wpłynie na ścieżkę kariery, zarobki i awanse.
-- 📄 **Eksport raportów:**
-  - Eksport insightów, wykresów i symulacji do PDF i CSV (jeden klik).
-- 📝 **Analiza CV/profilu:**
-  - Automatyczne wykrywanie umiejętności, luk, rekomendacje rozwoju.
-- 🛤️ **Personalizowane ścieżki kariery:**
-  - Generowanie i wizualizacja optymalnych ścieżek rozwoju na podstawie rynku i profilu.
-- ⚙️ **Tryb CLI (alternatywa):**
-  - Pełna analiza i rekomendacje z poziomu terminala.
+- 🖥️ **Modern graphical interface (GUI):**
+  - Dashboard with insights, charts, What-if section, dark mode, and responsive layout.
+  - Dynamic recommendations and alerts based on profile and simulations.
+- 📊 **Advanced visualizations:**
+  - Radar chart (spider chart) of competency gaps.
+  - Comparative salary charts (baseline vs What-if scenarios).
+  - Interactive market trend charts and skill development graphs.
+- 🤔 **"What-if" simulations:**
+  - Ability to test how learning a new skill or changing industries will affect career path, salary, and promotions.
+- 📄 **Report export:**
+  - Export insights, charts, and simulations to PDF and CSV (one click).
+- 📝 **CV/profile analysis:**
+  - Automatic skill detection, gap analysis, development recommendations.
+- 🛤️ **Personalized career paths:**
+  - Generation and visualization of optimal development paths based on market and profile.
+- ⚙️ **CLI mode (alternative):**
+  - Complete analysis and recommendations from terminal.
 - 🌙 **Dark mode:**
-  - Nowoczesny, czytelny wygląd z możliwością zmiany motywu.
+  - Modern, readable appearance with theme switching capability.
 
 ---
 
 ## 🖼️ Screenshots (GUI & Output)
 
-> **Przykładowe ekrany (dodaj własne zrzuty po uruchomieniu!):**
+> **Sample screens (add your own screenshots after running!):**
 
 - **Dashboard:**
-  - Sekcja insightów i rekomendacji (dynamiczne podpowiedzi, alerty).
-  - Wykres radarowy luk kompetencyjnych.
-  - Sekcja What-if (symulacja alternatywnych scenariuszy).
-  - Wykres porównawczy zarobków (bazowy vs What-if).
-  - Przycisk eksportu raportu PDF/CSV.
+  - Insights and recommendations section (dynamic tips, alerts).
+  - Radar chart of competency gaps.
+  - What-if section (simulation of alternative scenarios).
+  - Comparative salary chart (baseline vs What-if).
+  - PDF/CSV report export button.
 
-- **Analiza CV:**
-  - Automatyczne wykrywanie umiejętności i poziomów.
-  - Rekomendacje rozwoju.
+- **CV Analysis:**
+  - Automatic skill and level detection.
+  - Development recommendations.
 
-- **Symulacja kariery:**
-  - Interaktywne wykresy rozwoju zarobków, umiejętności, szans na awans.
+- **Career Simulation:**
+  - Interactive charts of salary growth, skills, promotion opportunities.
 
-- **Eksport PDF/CSV:**
-  - Raporty z insightami i wykresami gotowe do prezentacji lub archiwizacji.
+- **PDF/CSV Export:**
+  - Reports with insights and charts ready for presentation or archiving.
 
 ---
 
 ## ⚙️ System Requirements & Dependencies
 
-- **Python**: 3.8 lub nowszy
-- **Biblioteki:**
+- **Python**: 3.8 or newer
+- **Libraries:**
   - `tkinter` (GUI)
   - `pandas`, `numpy`, `matplotlib`, `fpdf`, `scikit-learn`, `spacy`
-  - (szczegóły w `requirements.txt`)
+  - (details in `requirements.txt`)
 - **System:**
-  - Windows, Linux, MacOS (zalecane min. 8GB RAM dla płynnej pracy z wykresami)
+  - Windows, Linux, MacOS (recommended min. 8GB RAM for smooth chart operation)
 
 ---
 
 ## 🛠️ Installation and Setup
 
-1. **Klonuj repozytorium:**
+1. **Clone the repository:**
    ```bash
    git clone <repository-url>
    cd <repository-directory>
    ```
-2. **Utwórz środowisko wirtualne:**
+2. **Create virtual environment:**
    ```bash
    python -m venv venv
    source venv/bin/activate  # Windows: venv\Scripts\activate
    ```
-3. **Zainstaluj zależności:**
+3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
-4. **Przygotuj pliki danych:**
-   - Upewnij się, że w katalogu `data/` znajdują się: `skills_database.csv`, `roles_database.csv`, `job_market_data.csv`.
-5. **Uruchom aplikację GUI:**
+4. **Prepare data files:**
+   - Ensure that `skills_database.csv`, `roles_database.csv`, `job_market_data.csv` are in the `data/` directory.
+5. **Run GUI application:**
    ```bash
    python gui.py
    ```
@@ -116,69 +116,69 @@ _Nowoczesna aplikacja desktopowa (GUI) oraz narzędzie CLI do analizy kariery, r
 
 ## 💡 Usage Guide (Graphical Interface)
 
-1. **Uruchom aplikację:**
+1. **Launch the application:**
    ```bash
    python gui.py
    ```
 2. **Dashboard:**
-   - Przeglądaj insighty, wykresy, sekcję What-if.
-   - Eksportuj raporty PDF/CSV.
-3. **Analiza CV/profilu:**
-   - Wczytaj CV lub profil, zobacz wykryte umiejętności i rekomendacje.
-4. **Symulacje i What-if:**
-   - Przetestuj wpływ nowych umiejętności/branż na swoją karierę.
-   - Porównuj scenariusze na wykresach.
-5. **Eksport:**
-   - Generuj raporty PDF/CSV z dowolnej sekcji.
+   - Browse insights, charts, What-if section.
+   - Export PDF/CSV reports.
+3. **CV/profile analysis:**
+   - Load CV or profile, view detected skills and recommendations.
+4. **Simulations and What-if:**
+   - Test the impact of new skills/industries on your career.
+   - Compare scenarios on charts.
+5. **Export:**
+   - Generate PDF/CSV reports from any section.
 
 ---
 
 ## 💡 Usage Guide (Command-Line Interface)
 
-CLI jest nadal dostępny jako alternatywa:
+CLI is still available as an alternative:
 
 ```bash
 python main.py [--cv PATH_TO_CV.TXT] [--profile PATH_TO_PROFILE.JSON] [--target-role "TARGET_ROLE_NAME"] [--output OUTPUT_FILENAME.JSON]
 ```
 
-- `--cv PATH_TO_CV.TXT`: (opcjonalnie) ścieżka do pliku CV.
-- `--profile PATH_TO_PROFILE.JSON`: (opcjonalnie) ścieżka do pliku profilu.
-- `--target-role "TARGET_ROLE_NAME"`: (opcjonalnie) docelowa rola.
-- `--output OUTPUT_FILENAME.JSON`: (opcjonalnie) plik wyjściowy (domyślnie `career_recommendations.json`).
+- `--cv PATH_TO_CV.TXT`: (optional) path to CV file.
+- `--profile PATH_TO_PROFILE.JSON`: (optional) path to profile file.
+- `--target-role "TARGET_ROLE_NAME"`: (optional) target role.
+- `--output OUTPUT_FILENAME.JSON`: (optional) output file (default: `career_recommendations.json`).
 
 ---
 
 ## 🗂️ Project File Structure
-- `gui.py`: Nowoczesny interfejs graficzny (Tkinter, dashboard, wykresy, insighty, eksporty).
-- `main.py`: Tryb CLI (analiza, rekomendacje, symulacje z terminala).
-- `modules/`: Moduły analityczne (`skills_analyzer.py`, `market_trends.py`, `career_path.py`, `career_simulator.py`).
-- `config/`: Konfiguracja aplikacji.
-- `data/`: Pliki danych (`skills_database.csv`, `roles_database.csv`, `job_market_data.csv`).
-- `requirements.txt`: Lista zależności.
-- `README.markdown`: Dokumentacja.
+- `gui.py`: Modern graphical interface (Tkinter, dashboard, charts, insights, exports).
+- `main.py`: CLI mode (analysis, recommendations, simulations from terminal).
+- `modules/`: Analytical modules (`skills_analyzer.py`, `market_trends.py`, `career_path.py`, `career_simulator.py`).
+- `config/`: Application configuration.
+- `data/`: Data files (`skills_database.csv`, `roles_database.csv`, `job_market_data.csv`).
+- `requirements.txt`: Dependencies list.
+- `README.markdown`: Documentation.
 
 ---
 
 ## 📝 Technical Notes & Considerations
-- **Jakość danych**: Im lepsze pliki CSV, tym trafniejsze rekomendacje.
-- **Wydajność**: Przy dużych plikach/danych zalecane jest środowisko z min. 8GB RAM.
-- **AI/ML**: Moduły mogą być rozbudowywane o bardziej zaawansowane algorytmy (NLP, predykcja, integracje API kursów itp.).
-- **Rozwój**: Kod modularny, łatwy do rozbudowy o kolejne funkcje i integracje.
+- **Data quality**: The better the CSV files, the more accurate the recommendations.
+- **Performance**: For large files/data, environment with min. 8GB RAM is recommended.
+- **AI/ML**: Modules can be expanded with more advanced algorithms (NLP, prediction, course API integrations, etc.).
+- **Development**: Modular code, easy to expand with additional features and integrations.
 
 ---
 
 ## 🤝 Contributing
-Chcesz dodać nową funkcję, lepszy wykres, integrację z API lub poprawić UX? Forkuj repozytorium, utwórz branch, zgłoś Pull Request!
+Want to add a new feature, better chart, API integration, or improve UX? Fork the repository, create a branch, submit a Pull Request!
 
 ---
 
 ## 📃 License
-MIT License. Szczegóły w pliku LICENSE.
+MIT License. Details in LICENSE file.
 
 ---
 
 ## 📧 Contact
-Projekt: **Adrian Lesniak**. Pytania, feedback, propozycje zmian – otwórz issue lub skontaktuj się przez GitHub.
+Project: **Adrian Lesniak**. Questions, feedback, change proposals – open an issue or contact via GitHub.
 
 ---
-✨ _Nowoczesna nawigacja po ścieżce kariery z AI i wizualizacjami!_
+✨ _Modern career path navigation with AI and visualizations!_
