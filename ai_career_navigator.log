@@ -1221,3 +1221,59 @@
 2025-07-17 00:53:42,074 - __main__ - INFO - Settings loaded successfully
 2025-07-17 00:53:43,637 - __main__ - INFO - Applied translations for language: English
 2025-07-17 01:03:00,511 - __main__ - INFO - Settings saved successfully
+2025-07-21 00:16:29,948 - __main__ - INFO - Inicjalizacja AI Career Navigator
+2025-07-21 00:16:29,949 - __main__ - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-21 00:16:31,670 - __main__ - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-21 00:16:31,673 - __main__ - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-21 00:16:31,684 - __main__ - INFO - Inicjalizacja symulatora kariery
+2025-07-21 00:16:31,684 - __main__ - INFO - £adowanie danych systemowych
+2025-07-21 00:16:31,684 - __main__ - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-21 00:16:31,685 - __main__ - INFO - £adowanie danych rynkowych
+2025-07-21 00:16:31,830 - __main__ - INFO - Dane za³adowane pomyœlnie
+2025-07-21 00:16:31,841 - __main__ - INFO - Inicjalizacja systemu zakoñczona
+2025-07-21 00:16:31,845 - __main__ - INFO - Rozpoczêcie analizy profilu u¿ytkownika
+2025-07-21 00:16:31,846 - __main__ - INFO - Analiza profilu u¿ytkownika zakoñczona
+2025-07-21 00:16:31,846 - __main__ - INFO - Generowanie rekomendacji kariery
+2025-07-21 00:16:31,857 - __main__ - INFO - Generowanie rekomendacji kariery zakoñczone
+2025-07-21 00:16:31,877 - __main__ - INFO - Rekomendacje zapisane do pliku: career_recommendations.json
+2025-07-21 00:18:44,540 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-21 00:18:44,540 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-21 00:18:45,944 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-21 00:18:45,946 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-21 00:18:45,957 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-21 00:18:45,957 - main - INFO - £adowanie danych systemowych
+2025-07-21 00:18:45,957 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-21 00:18:45,958 - main - INFO - £adowanie danych rynkowych
+2025-07-21 00:18:45,958 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-21 00:18:45,958 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-21 00:18:45,959 - __main__ - INFO - Settings loaded successfully
+2025-07-21 00:18:47,469 - __main__ - INFO - Applied translations for language: English
+2025-07-21 00:21:01,946 - __main__ - INFO - Settings saved successfully
+2025-07-21 00:21:33,849 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-21 00:21:33,849 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-21 00:21:35,283 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-21 00:21:35,285 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-21 00:21:35,296 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-21 00:21:35,297 - main - INFO - £adowanie danych systemowych
+2025-07-21 00:21:35,297 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-21 00:21:35,297 - main - INFO - £adowanie danych rynkowych
+2025-07-21 00:21:35,298 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-21 00:21:35,298 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-21 00:21:35,304 - __main__ - INFO - Settings loaded successfully
+2025-07-21 00:21:36,634 - __main__ - INFO - Applied translations for language: English
+2025-07-21 00:23:38,306 - __main__ - INFO - Settings saved successfully
+2025-07-21 00:24:09,716 - main - INFO - Inicjalizacja AI Career Navigator
+2025-07-21 00:24:09,717 - main - INFO - Inicjalizacja analizatora umiejêtnoœci
+2025-07-21 00:24:11,052 - main - INFO - Inicjalizacja analizatora trendów rynkowych
+2025-07-21 00:24:11,053 - main - INFO - Inicjalizacja generatora œcie¿ek kariery
+2025-07-21 00:24:11,064 - main - INFO - Inicjalizacja symulatora kariery
+2025-07-21 00:24:11,071 - main - INFO - £adowanie danych systemowych
+2025-07-21 00:24:11,078 - main - INFO - £adowanie bazy danych umiejêtnoœci
+2025-07-21 00:24:11,086 - main - INFO - £adowanie danych rynkowych
+2025-07-21 00:24:11,094 - main - INFO - Dane za³adowane pomyœlnie
+2025-07-21 00:24:11,101 - main - INFO - Inicjalizacja systemu zakoñczona
+2025-07-21 00:24:11,120 - __main__ - INFO - Settings loaded successfully
+2025-07-21 00:24:14,698 - __main__ - INFO - Applied translations for language: English
+2025-07-21 00:25:07,511 - modules.career_path - INFO - Generujê œcie¿kê kariery: {'current_role': 'junior', 'target_role': 'CTO', 'time_frame': 5, 'priority': 'Salary', 'user_skills': ['Python', 'Java', 'JavaScript', 'Project Management'], 'experience_years': 0}
+2025-07-21 00:26:48,121 - modules.career_path - INFO - Generujê œcie¿kê kariery: {'current_role': 'junior', 'target_role': 'CTO', 'time_frame': 5, 'priority': 'Salary', 'user_skills': ['Python', 'Java', 'JavaScript', 'Project Management'], 'experience_years': 0}
+2025-07-21 01:33:56,948 - __main__ - INFO - Settings saved successfully

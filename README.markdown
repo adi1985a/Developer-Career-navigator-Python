@@ -26,54 +26,84 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
 
 ## 📄 Overview
 
-**AI Career Navigator** is a modern desktop application (GUI) and CLI tool that supports users in career planning, competency analysis, development forecasting, and professional decision-making. Through advanced CV/profile analysis, dynamic recommendations, interactive charts, and "what-if" simulations, the application enables conscious management of professional development.
+**AI Career Navigator** is a modern desktop application (GUI) and CLI tool that supports users in career planning, competency analysis, development forecasting, and professional decision-making. The application features a modern, responsive interface, multi-language support, dynamic recommendations, interactive charts, and "what-if" simulations for conscious career management.
+
+<br> 
+<p align="center">
+  <img src="screenshots/1.gif" width="80%">
+</p>
+<br>
+
 
 ---
 
 ## ✨ Key Features
 
 - 🖥️ **Modern graphical interface (GUI):**
-  - Dashboard with insights, charts, What-if section, dark mode, and responsive layout.
-  - Dynamic recommendations and alerts based on profile and simulations.
-- 📊 **Advanced visualizations:**
-  - Radar chart (spider chart) of competency gaps.
-  - Comparative salary charts (baseline vs What-if scenarios).
-  - Interactive market trend charts and skill development graphs.
-- 🤔 **"What-if" simulations:**
-  - Ability to test how learning a new skill or changing industries will affect career path, salary, and promotions.
-- 📄 **Report export:**
-  - Export insights, charts, and simulations to PDF and CSV (one click).
-- 📝 **CV/profile analysis:**
-  - Automatic skill detection, gap analysis, development recommendations.
-- 🛤️ **Personalized career paths:**
-  - Generation and visualization of optimal development paths based on market and profile.
-- ⚙️ **CLI mode (alternative):**
-  - Complete analysis and recommendations from terminal.
-- 🌙 **Dark mode:**
-  - Modern, readable appearance with theme switching capability.
+  - Large, responsive window with vertical navigation menu (icons above text)
+  - Dashboard with insights, stats cards, quick access, and charts
+  - All content centered and scrollable for large data
+  - Dark mode and multiple color themes
+  - Multi-language support (English, Norwegian, Polish)
+- 👤 **User Profile Management:**
+  - Create, edit, and save user profiles
+  - Add/remove skills, set experience, education, and salary expectations
+  - Auto-save and export profile data
+- 📄 **CV Analysis:**
+  - Paste or load CV for automatic skill extraction and analysis
+  - Detect skill levels, experience, and generate personalized recommendations
+  - Export analysis results
+- 🛤️ **Career Path Generation:**
+  - Set current and target roles, time horizon, and priorities
+  - Generate optimal career paths with required skills and salary projections
+  - Visualize career steps and missing skills
+- 🧪 **Career Simulation:**
+  - Simulate career progression for different scenarios (learning intensity, job change strategy, time horizon)
+  - Analyze salary growth, promotion chances, and skill acquisition over time
+  - Interactive charts and detailed results
+- 📈 **Market Trends Analysis:**
+  - Analyze job market trends by skill category and time range
+  - View demand and salary trends, hot skills, and top paid skills
+  - Export market analysis results
+- ⚙️ **Settings:**
+  - Configure output directory, export format (JSON, CSV, TXT), auto-save, and theme
+  - All settings saved and loaded automatically
+- 🌙 **Dark mode & themes:**
+  - Switch between light, dark, blue, and green themes
+- 🌐 **Multi-language UI:**
+  - Switch interface language (English, Norwegian, Polish)
+- 📝 **Export:**
+  - Export reports, analysis, and simulations to PDF and CSV
+- 🧩 **Modular design:**
+  - Easily extendable with new features and integrations
 
 ---
 
 ## 🖼️ Screenshots (GUI & Output)
 
-> **Sample screens (add your own screenshots after running!):**
+> **Sample screens :**
 
 - **Dashboard:**
-  - Insights and recommendations section (dynamic tips, alerts).
-  - Radar chart of competency gaps.
-  - What-if section (simulation of alternative scenarios).
-  - Comparative salary chart (baseline vs What-if).
-  - PDF/CSV report export button.
-
+  - Insights, stats cards, quick access buttons, radar and bar charts
+  <img src="screenshots\1.jpg" width="300"/>
+- **User Profile:**
+  - Personal and professional data, skills management, save/load profile
+  <img src="screenshots\2.jpg" width="300"/>
 - **CV Analysis:**
-  - Automatic skill and level detection.
-  - Development recommendations.
-
+  - Paste or load CV, analyze skills, view recommendations
+  <img src="screenshots\3.jpg" width="300"/>
+- **Career Path:**
+  - Set goals, generate and visualize career steps, see required skills
+  <img src="screenshots\4.jpg" width="300"/>
 - **Career Simulation:**
-  - Interactive charts of salary growth, skills, promotion opportunities.
-
-- **PDF/CSV Export:**
-  - Reports with insights and charts ready for presentation or archiving.
+  - Set parameters, run simulation, view salary and promotion charts
+  <img src="screenshots\5.jpg" width="300"/>
+- **Market Trends:**
+  - Analyze demand and salary trends, hot skills, top paid skills
+  <img src="screenshots\6.jpg" width="300"/>
+- **Settings:**
+  - Output, export, theme, and language options
+  <img src="screenshots\7.jpg" width="300"/>
 
 ---
 
@@ -82,7 +112,7 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
 - **Python**: 3.8 or newer
 - **Libraries:**
   - `tkinter` (GUI)
-  - `pandas`, `numpy`, `matplotlib`, `fpdf`, `scikit-learn`, `spacy`
+  - `pandas`, `numpy`, `matplotlib`, `fpdf`, `scikit-learn`, `spacy`, `Pillow`
   - (details in `requirements.txt`)
 - **System:**
   - Windows, Linux, MacOS (recommended min. 8GB RAM for smooth chart operation)
@@ -107,9 +137,14 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
    ```
 4. **Prepare data files:**
    - Ensure that `skills_database.csv`, `roles_database.csv`, `job_market_data.csv` are in the `data/` directory.
+   - The app will auto-create sample data if missing.
 5. **Run GUI application:**
    ```bash
    python gui.py
+   ```
+6. **Run CLI mode:**
+   ```bash
+   python main.py --cv my_cv.txt --profile my_profile.json --target-role "Senior Python Developer" --output recommendations.json
    ```
 
 ---
@@ -120,22 +155,28 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
    ```bash
    python gui.py
    ```
-2. **Dashboard:**
-   - Browse insights, charts, What-if section.
-   - Export PDF/CSV reports.
-3. **CV/profile analysis:**
-   - Load CV or profile, view detected skills and recommendations.
-4. **Simulations and What-if:**
-   - Test the impact of new skills/industries on your career.
-   - Compare scenarios on charts.
-5. **Export:**
-   - Generate PDF/CSV reports from any section.
+2. **Navigation:**
+   - Use the vertical menu to access: Dashboard, User Profile, CV Analysis, Career Path, Career Simulation, Market Trends, Settings
+3. **User Profile:**
+   - Fill in personal/professional data, add/remove skills, save/load profile
+4. **CV Analysis:**
+   - Paste or load your CV, analyze, and review recommendations
+5. **Career Path:**
+   - Set your current/target role, time horizon, and generate a career path
+6. **Career Simulation:**
+   - Set simulation parameters and run to see projected outcomes
+7. **Market Trends:**
+   - Analyze trends by skill category and time range
+8. **Settings:**
+   - Change output, export format, theme, and language
+9. **Export:**
+   - Export reports and results to PDF/CSV from any section
 
 ---
 
 ## 💡 Usage Guide (Command-Line Interface)
 
-CLI is still available as an alternative:
+CLI is available as an alternative:
 
 ```bash
 python main.py [--cv PATH_TO_CV.TXT] [--profile PATH_TO_PROFILE.JSON] [--target-role "TARGET_ROLE_NAME"] [--output OUTPUT_FILENAME.JSON]
@@ -149,13 +190,15 @@ python main.py [--cv PATH_TO_CV.TXT] [--profile PATH_TO_PROFILE.JSON] [--target-
 ---
 
 ## 🗂️ Project File Structure
-- `gui.py`: Modern graphical interface (Tkinter, dashboard, charts, insights, exports).
-- `main.py`: CLI mode (analysis, recommendations, simulations from terminal).
-- `modules/`: Analytical modules (`skills_analyzer.py`, `market_trends.py`, `career_path.py`, `career_simulator.py`).
-- `config/`: Application configuration.
-- `data/`: Data files (`skills_database.csv`, `roles_database.csv`, `job_market_data.csv`).
-- `requirements.txt`: Dependencies list.
-- `README.markdown`: Documentation.
+- `gui.py`: Modern graphical interface (Tkinter, dashboard, charts, insights, exports, multi-language)
+- `main.py`: CLI mode (analysis, recommendations, simulations from terminal)
+- `modules/`: Analytical modules (`skills_analyzer.py`, `market_trends.py`, `career_path.py`, `career_simulator.py`)
+- `config/`: Application configuration
+- `data/`: Data files (`skills_database.csv`, `roles_database.csv`, `job_market_data.csv`)
+- `output/`: Exported reports and profiles
+- `requirements.txt`: Dependencies list
+- `README.markdown`: Documentation
+- `settings.json`: User settings
 
 ---
 
@@ -164,6 +207,8 @@ python main.py [--cv PATH_TO_CV.TXT] [--profile PATH_TO_PROFILE.JSON] [--target-
 - **Performance**: For large files/data, environment with min. 8GB RAM is recommended.
 - **AI/ML**: Modules can be expanded with more advanced algorithms (NLP, prediction, course API integrations, etc.).
 - **Development**: Modular code, easy to expand with additional features and integrations.
+- **Multi-language**: UI and instructions can be translated and extended.
+- **Modern UI/UX**: Consistent padding, centering, icons, and scrollbars for large content.
 
 ---
 
