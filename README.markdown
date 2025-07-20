@@ -101,9 +101,10 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
 - **Market Trends:**
   - Analyze demand and salary trends, hot skills, top paid skills
   <img src="screenshots\6.jpg" width="300"/>
+  <img src="screenshots\7.jpg" width="300"/>
 - **Settings:**
   - Output, export, theme, and language options
-  <img src="screenshots\7.jpg" width="300"/>
+  <img src="screenshots\8.jpg" width="300"/>
 
 ---
 
