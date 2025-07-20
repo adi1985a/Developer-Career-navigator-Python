@@ -30,7 +30,7 @@ _Modern desktop application (GUI) and CLI tool for career analysis, development 
 
 <br> 
 <p align="center">
-  <img src="screenshots/1.gif" width="80%">
+  <img src="screenshots/1.gif" width="90%">
 </p>
 <br>
 
